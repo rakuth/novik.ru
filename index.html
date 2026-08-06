@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>⚡⚡⚡ НОВОКУЙБЫШЕВСК АД груз 200 </title>
+    <style>
+        /* Максимально выжигающий глаза и кривой дизайн */
+        body {
+            background-color: #00ff00;
+            background-image: radial-gradient(#ff00ff 20%, transparent 20%), radial-gradient(#00ffff 20%, transparent 20%);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            font-family: "Comic Sans MS", "Arial Black", impact, sans-serif;
+            color: #ff0000;
+            margin: 0;
+            padding: 20px;
+            cursor: wait;
+        }
+
+        .trash-container {
+            border: 10px dashed #ffff00;
+            background: #000000;
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 15px 15px 0px #ff00ff;
+            transform: rotate(-1deg);
+        }
+
+        h1 {
+            font-size: 38px;
+            text-shadow: 4px 4px #00ffff;
+            text-align: center;
+            background: yellow;
+            color: black;
+            padding: 10px;
+            border: 5px ridge red;
+        }
+
+        marquee {
+            background: red;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid black;
+        }
+
+        .smell-meter {
+            border: 5px inset #00ff00;
+            background: #222;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .big-bad-number {
+            font-size: 60px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            font-family: monospace;
+        }
+
+        .btn-toxic {
+            background: #ff00ff;
+            color: #ffff00;
+            font-size: 25px;
+            font-weight: bold;
+            padding: 15px;
+            border: 8px outset #00ffff;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .btn-toxic:hover {
+            background: #00ffff;
+            color: #ff0000;
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .chemical-card {
+            background: #111;
+            border: 3px dotted #ff0000;
+            margin: 10px 0;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .chemical-card h3 {
+            color: #ffff00;
+            margin: 0;
+        }
+
+        .blink {
+            animation: blinker 0.5s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        .wind-direction {
+            font-size: 20px;
+            color: #00ffff;
+            background: #333;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<marquee scrollamount="15">⚠️ ВНИМАНИЕ!!!!!!!!!!!!!!!! СЕГОДНЯ В ВОЗДУХЕ ПРЕВЫШЕНИЕ дронов ДЫШИТЕ ЧЕРЕЗ РАЗ ⚠️</marquee>
+
+<div class="trash-container">
+    <h1>☣️ НОВОКУЙБЫШЕВСК.7школа.РФ ☣️</h1>
+    <p style="color: #00ff00; text-align: center; font-size: 18px;">
+        официальный груз 200
+    </p>
+
+    <div class="smell-meter">
+        <h2 style="color: white;">ТЕКУЩИЙ УРОВЕНЬ ВЫБРОСА:</h2>
+        <div class="big-bad-number blink" id="ppm">9999 PPM</div>
+        <p style="color: yellow; font-size: 20px;" id="status-text">СТАТУС: ТУХЛЫЕ ЯЙЦА С ПРИМЕСЬЮ АПТЕКИ</p>
+    </div>
+
+    <button class="btn-toxic" onclick="sniffAir()">ПОДЫШАТЬ СВЕЖИМ ВОЗДУХОМ (КЛИК)</button>
+
+    <div class="wind-direction">
+        <strong>💨 Откуда дует вонь:</strong> <span id="wind">Прямо в твое окно с НПЗ</span>
+    </div>
+
+    <h2 style="color: #ff00ff; text-align: center; margin-top: 30px;">СЕГОДНЯ В МЕНЮ (МЕНЮ ДНЯ):</h2>
+
+    <div class="chemical-card">
+        <h3>1. Сероводород ($H_2S$)</h3>
+        <p>Запах: Аромат протухших бабушкиных яиц.</p>
+        <p>Эффект: Слезы счастья от меллстроя, тошнота, желание уехать в Самару.</p>
+    </div>
+
+    <div class="che
+mical-card">
+        <h3>2. Фенол & Формальдегид</h3>
+        <p>Запах: Горелая пластмассовая бурмалда.</p>
+        <p>Эффект: Накапливается в печени, чтобы ты был груз 200.</p>
+    </div>
+
+    <div class="chemical-card">
+        <h3>3. Мытыши</h3>
+        <p>Запах: Чистая концентрированная гниль.</p>
+        <p>Эффект: Глаза вытекают прямо на анус.</p>
+    </div>
+
+    <p style="text-align: center; color: gray; font-size: 10px; margin-top: 50px;">
+        Сайт сделан на коленке. При поддержке майора rakuth
+    </p>
+</div>
+
+<script>
+    const statuses = [
+        "АРОМАТ: Заводская тухлая яичница",
+        "АРОМАТ: Палёная бурмалда и резина",
+        "АРОМАТ: Чистый голый алгоголик",
+        "АРОМАТ: Металлическая кислота "
+    ];
+
+    const winds = [
+        "С НПЗ прямо тебе в форточку",
+        "Со стороны Завода масел ",
+        "Штиль! Вонь просто висит над твоим домом",
+        "С факела "
+    ];
+
+    function sniffAir() {
+        // Генерируем дикий рандом
+        const randomPpm = Math.floor(Math.random() * 8000) + 2000;
+        document.getElementById('ppm').innerText = randomPpm + " PPM";
+        
+        const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+        document.getElementById('status-text').innerText = "СТАТУС: " + randomStatus;
+
+        const randomWind = winds[Math.floor(Math.random() * winds.length)];
+        document.getElementById('wind').innerText = randomWind;
+
+        alert("Ты сделал глубокий вдох! -5 лет жизни. Спасибо за запуск!");
+    }
+</script>
+
+</body>
+</html>
