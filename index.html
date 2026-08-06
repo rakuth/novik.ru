@@ -2,188 +2,412 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>⚡⚡⚡ НОВОКУЙБЫШЕВСК АД груз 200 </title>
+    <title>☣️ НОВОКУЙБЫШЕВСК ☣️</title>
     <style>
-        /* Максимально выжигающий глаза и кривой дизайн */
         body {
-            background-color: #00ff00;
-            background-image: radial-gradient(#ff00ff 20%, transparent 20%), radial-gradient(#00ffff 20%, transparent 20%);
-            background-size: 50px 50px;
-            background-position: 0 0, 25px 25px;
+            background-color: #ff00ff;
+            background-image: repeating-linear-gradient(45deg, #000 0, #000 20px, #ffff00 20px, #ffff00 40px);
             font-family: "Comic Sans MS", "Arial Black", impact, sans-serif;
-            color: #ff0000;
+            color: #00ff00;
             margin: 0;
-            padding: 20px;
-            cursor: wait;
+            padding: 10px;
         }
 
-        .trash-container {
-            border: 10px dashed #ffff00;
+        .main-wrapper {
             background: #000000;
+            border: 12px dashed #00ffff;
             padding: 15px;
-            max-width: 800px;
+            max-width: 950px;
             margin: 0 auto;
-            box-shadow: 15px 15px 0px #ff00ff;
-            transform: rotate(-1deg);
+            box-shadow: 20px 20px 0px #ff0000;
+            transform: rotate(-0.3deg);
         }
 
         h1 {
-            font-size: 38px;
-            text-shadow: 4px 4px #00ffff;
+            font-size: 34px;
+            text-shadow: 5px 5px #ff0000;
             text-align: center;
-            background: yellow;
-            color: black;
-            padding: 10px;
-            border: 5px ridge red;
+            background: #00ff00;
+            color: #000;
+            padding: 15px;
+            border: 6px ridge #fff;
+            margin-top: 5px;
         }
 
         marquee {
-            background: red;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            border: 3px solid black;
-        }
-
-        .smell-meter {
-            border: 5px inset #00ff00;
-            background: #222;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .big-bad-number {
-            font-size: 60px;
-            color: #00ff00;
-            text-shadow: 0 0 10px #00ff00;
-            font-family: monospace;
-        }
-
-        .btn-toxic {
-            background: #ff00ff;
+            background: #ff0000;
             color: #ffff00;
-            font-size: 25px;
+            font-size: 22px;
             font-weight: bold;
-            padding: 15px;
-            border: 8px outset #00ffff;
-            cursor: pointer;
-            width: 100%;
-            margin: 10px 0;
+            border: 4px solid #000;
+            padding: 5px;
         }
 
-        .btn-toxic:hover {
-            background: #00ffff;
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        nav button {
+            background: #ffff00;
             color: #ff0000;
-            transform: scale(1.05) rotate(3deg);
+            font-size: 15px;
+            font-weight: 900;
+            padding: 10px;
+            border: 5px outset #00ff00;
+            cursor: pointer;
+            font-family: inherit;
         }
 
-        .chemical-card {
+        nav button:hover {
+            background: #00ffff;
+            color: #000;
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* Кликер и Прогресс */
+        .clicker-box {
+            border: 6px double #ff00ff;
             background: #111;
-            border: 3px dotted #ff0000;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-clicker {
+            background: #00ff00;
+            color: #000;
+            font-size: 24px;
+            font-weight: 900;
+            padding: 15px 25px;
+            border: 6px ridge #ff0000;
+            cursor: pointer;
             margin: 10px 0;
-            padding: 10px;
+            width: 100%;
+        }
+
+        .btn-clicker:disabled {
+            background: #444;
+            color: #888;
+            border-color: #222;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            background: #333;
+            border: 3px solid #00ffff;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        /* Таблицы и Карточки */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #111;
+            color: #fff;
+            border: 3px solid #ffff00;
+        }
+
+        .custom-table th, .custom-table td {
+            border: 2px solid #ff00ff;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background: #ff0000;
+            color: #ffff00;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 4px inset #00ff00;
+            margin: 15px 0;
+            padding: 15px;
             color: #fff;
         }
 
-        .chemical-card h3 {
+        .card h3 {
             color: #ffff00;
-            margin: 0;
+            margin-top: 0;
         }
 
-        .blink {
-            animation: blinker 0.5s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-
-        .wind-direction {
+        .burmalda-btn {
+            background: red;
+            color: white;
             font-size: 20px;
-            color: #00ffff;
-            background: #333;
-            padding: 10px;
-            border-radius: 20px;
+            padding: 15px;
+            width: 100%;
+            border: 6px double yellow;
+            cursor: pointer;
+            font-weight: bold;
         }
+.blink { animation: blinker 0.4s infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
 
-<marquee scrollamount="15">⚠️ ВНИМАНИЕ!!!!!!!!!!!!!!!! СЕГОДНЯ В ВОЗДУХЕ ПРЕВЫШЕНИЕ дронов ДЫШИТЕ ЧЕРЕЗ РАЗ ⚠️</marquee>
+<marquee scrollamount="12">⚠️ ВНИМАНИЕ! УРОВЕНЬ БУРМАЛДЫ КРИТИЧЕСКИЙ! КЛИКАЙ НА КНОПКУ, ЧТОБЫ ОЧИСТИТЬ ДИЗАЙН! ⚠️</marquee>
 
-<div class="trash-container">
-    <h1>☣️ НОВОКУЙБЫШЕВСК.7школа.РФ ☣️</h1>
-    <p style="color: #00ff00; text-align: center; font-size: 18px;">
-        официальный груз 200
-    </p>
+<div class="main-wrapper">
+    <h1>☣️ НОВОКУЙБЫШЕВСК.РФ ☣️</h1>
 
-    <div class="smell-meter">
-        <h2 style="color: white;">ТЕКУЩИЙ УРОВЕНЬ ВЫБРОСА:</h2>
-        <div class="big-bad-number blink" id="ppm">9999 PPM</div>
-        <p style="color: yellow; font-size: 20px;" id="status-text">СТАТУС: ТУХЛЫЕ ЯЙЦА С ПРИМЕСЬЮ АПТЕКИ</p>
+    <!-- КЛИКЕР ОЧИСТКИ САЙТА -->
+    <div class="clicker-box">
+        <h2 style="color: #ffff00; margin: 0;">💥 ОБЩЕГОРОДСКОЙ КЛИКЕР ЭВОЛЮЦИИ</h2>
+        <p style="color: #fff;">1 человек = 1 клик. Жми, чтобы вытащить дизайн из свалки!</p>
+        
+        <button id="click-btn" class="btn-clicker" onclick="registerClick()">🎯 ОЧИСТИТЬ САЙТ ОТ КРИНЖА (1 КЛИК)</button>
+        
+        <div class="progress-bar">
+            <div id="p-fill" class="progress-fill"></div>
+        </div>
+        <p style="color: #00ff00; font-size: 18px;" id="click-stats">Зафиксировано кликов: 0</p>
+        <p style="color: #ff00ff;" id="level-status">ТЕКУЩИЙ СТАТУС: Уровень 0 (Адовый мусор из 2000-х)</p>
     </div>
 
-    <button class="btn-toxic" onclick="sniffAir()">ПОДЫШАТЬ СВЕЖИМ ВОЗДУХОМ (КЛИК)</button>
+    <nav>
+        <button onclick="showPage('home')"> Главная</button>
+        <button onclick="showPage('stats')">Население (Демография)</button>
+        <button onclick="showPage('schools')"> Школы-Ады</button>
+        <button onclick="showPage('places')"> Вид сверху</button>
+        <button onclick="showPage('burmalda')"> Датчик Выбросов</button>
+        <button onclick="showPage('rules')"> Законы выживания</button>
+        <button onclick="showPage('evo')"> Уровни (Цели)</button>
+    </nav>
 
-    <div class="wind-direction">
-        <strong>💨 Откуда дует вонь:</strong> <span id="wind">Прямо в твое окно с НПЗ</span>
+    <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
+    <div id="home" class="page active">
+        <div class="card">
+            <h2 style="color: #00ffff; text-align: center;">Добро пожаловать в промышленную сказку!</h2>
+            <p>Новокуйбышевск — уникальное место, где туман состоит из химикатов, а свежий воздух — это городской миф. Этот сайт сделан без цензуры, без соплей администраций и без попыток украсить реальность.</p>
+            <p>Переходи по вкладкам в меню, чтобы прочитать про то, как вымирает город, в каких школах ломают психику и где в городе самые токсичные зоны.</p>
+        </div>
     </div>
 
-    <h2 style="color: #ff00ff; text-align: center; margin-top: 30px;">СЕГОДНЯ В МЕНЮ (МЕНЮ ДНЯ):</h2>
+ <!-- СТРАНИЦА 2: НАСЕЛЕНИЕ -->
+<div id="stats" class="page">
+    <h2 style="color: #ffff00; text-align: center;"> ДИНАМИКА НАСЕЛЕНИЯ (1952 – 2026)</h2>
+    <p style="color: #fff;">Статистика изменения численности жителей с момента основания города:</p>
+    
+    <table class="custom-table">
+        <tr>
+            <th>Год</th>
+            <th>Население (чел)</th>
+            <th>Исторический контекст</th>
+        </tr>
+        <tr>
+            <td>1952</td>
+            <td>~15 000</td>
+            <td>Начало активного строительства нефтеперерабатывающего завода и рабочего поселка.</td>
+        </tr>
+        <tr>
+            <td>1959</td>
+            <td>62 700</td>
+            <td>Массовый приток специалистов и рабочих со всего СССР на новые предприятия.</td>
+        </tr>
+        <tr>
+            <td>1970</td>
+            <td>103 700</td>
+            <td>Период активной urban-застройки и расширения промышленного узла.</td>
+        </tr>
+        <tr>
+            <td>1989</td>
+            <td>113 000</td>
+            <td>Исторический пик численности населения Новокуйбышевска.</td>
+        </tr>
+        <tr>
+            <td>2002</td>
+            <td>112 900</td>
+            <td>Начало стагнации демографических показателей.</td>
+        </tr>
+        <tr>
+            <td>2010</td>
+            <td>108 400</td>
+            <td>Нарастающий естественный убыль и отток молодежи в крупные города.</td>
+        </tr>
+        <tr>
+            <td>2021</td>
+            <td>98 300</td>
+            <td>Потеря статуса города-сотысячника согласно данным Всероссийской переписи.</td>
+        </tr>
+        <tr>
+            <td>2026</td>
+            <td>~93 000</td>
+            <td>Продолжение постепенного снижения численности населения.</td>
+        </tr>
+    </table>
+</div>
 
-    <div class="chemical-card">
-        <h3>1. Сероводород ($H_2S$)</h3>
-        <p>Запах: Аромат протухших бабушкиных яиц.</p>
-        <p>Эффект: Слезы счастья от меллстроя, тошнота, желание уехать в Самару.</p>
+<!-- СТРАНИЦА 3: ШКОЛЫ -->
+<div id="schools" class="page">
+    <h2 style="color: #ff0000; text-align: center;"> ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ ГОРОДА</h2>
+    <p style="color: #fff;">Краткая справка по ключевым школам и их текущему состоянию:</p>
+
+    <div class="card">
+        <h3> Школа №1 (Основана в 1952 г.)</h3>
+        <p>Первое общеобразовательное учреждение города. Здание требует систематического капитального ремонта, а материально-техническая база устарела.</p>
     </div>
 
-    <div class="che
-mical-card">
-        <h3>2. Фенол & Формальдегид</h3>
-        <p>Запах: Горелая пластмассовая бурмалда.</p>
-        <p>Эффект: Накапливается в печени, чтобы ты был груз 200.</p>
+    <div class="card">
+        <h3> Школа №3 (Основана в 1954 г.)</h3>
+        <p>Одно из старейших учебных заведений. Отличается высокой плотностью классов и строгим дисциплинарным режимом.</p>
     </div>
 
-    <div class="chemical-card">
-        <h3>3. Мытыши</h3>
-        <p>Запах: Чистая концентрированная гниль.</p>
-        <p>Эффект: Глаза вытекают прямо на анус.</p>
+    <div class="card">
+        <h3> Школа №6 (Основана в 1958 г.)</h3>
+        <p>Расположена в непосредственной близости к промышленным зонам, что регулярно сказывается на качестве воздуха на прилегающей территории.</p>
     </div>
 
-    <p style="text-align: center; color: gray; font-size: 10px; margin-top: 50px;">
-        Сайт сделан на коленке. При поддержке майора rakuth
-    </p>
+    <div class="card">
+        <h3> Школа №8 (Основана в 1962 г.)</h3>
+        <p>Типовое советское здание. Спортивная инфраструктура и дворовая территория требуют комплексного обновления.</p>
+    </div>
+
+    <div class="card">
+        <h3> Гимназия №1 / Школа №7 (Основана в 1974 г.)</h3>
+        <p>Учреждение с повышенными требованиями к успеваемости, при этом инженерные коммуникации и туалетные блоки давно требуют модернизации.</p>
+    </div>
+</div>
+
+    <!-- СТРАНИЦА 4: ЛОКАЦИИ -->
+    <div id="places" class="page">
+        <h2 style="color: #ffff00; text-align: center;">🛸 ЛОКАЦИИ (ЗДЕСЬ БУДУТ ФОТО)</h2>
+        
+        <div class="card">
+            <h3> Парк Победы</h3>
+            <p>[Место под твоё фото DJI_0996.jpg]</p>
+            <p>Единственный кусок зелени, который еще пытается дышать.</p>
+        </div>
+
+        <div class="card">
+            <h3> Площадь Ленина</h3>
+            <p>[Место под твоё фото unnamed.jpg]</p>
+            <p>Плитка, бетон и уныние. Главная тусовка.</p>
+        </div>
+
+        <div class="card">
+            <h3> Озеро Сакулино</h3>
+            <p>[Место под твоё фото f23b6.jpg]</p>
+            <p>Вода с секретным химическим составом.</p>
+        </div>
+    </div>
+
+    <!-- СТРАНИЦА 5: БУРМАЛДА -->
+    <div id="burmalda" class="page">
+        <h2 style="color: #ff0000; text-align: center;"> ДАТЧИК СУМРАЧНОЙ БУРМАЛДЫ</h2>
+        <button class="burmalda-btn" onclick="generateSmell()">☣️ ЗАМЕРИТЬ ВЫБРОС ☣️</button>
+        <div id="burmalda-result" style="margin-top: 20px; background: #222; padding: 15px; border: 3px solid #ff0000; display: none;">
+            <h3 style="color: #00ff00;" id="b-title"></h3>
+            <p style="color: #fff;" id="b-desc"></p>
+        </div>
+    </div>
+
+<div id="rules" class="page">
+    <h2 style="color: #00ffff; text-align: center;">ПРАВИЛА И РЕАЛИИ ГОРОДА</h2>
+    <div class="card">
+        <ol style="line-height: 1.8;">
+            <li><strong>Ночные сбросы на промзоне.</strong> Горение факелов — штатный процесс утилизации газов, а не аварийная ситуация.</li>
+            <li><strong>Контроль проветривания.</strong> В безветренную погоду и при штиле рекомендуется держать окна закрытыми из-за скопления выбросов в нижних слоях атмосферы.</li>
+            <li><strong>Специфика водоснабжения.</strong> Качество и запах водопроводной воды напрямую зависят от состояния городских очистных сооружений и износа сетей.</li>
+            <li><strong>Транспортная миграция.</strong> Значительная часть населения ежедневно ездит на работу и учебу в Самару из-за ограниченного местного рынка труда.</li>
+            <li><strong>Технические сбои.</strong> Проблемы в работе инфраструктуры и сервисов — обычное следствие высокого износа городских систем.</li>
+        </ol>
+    </div>
+</div>
+
+    <!-- СТРАНИЦА 7: ЭВОЛЮЦИЯ КЛИКЕРА -->
+    <div id="evo" class="page">
+        <h2 style="color: #00ffff; text-align: center;">📈 ЭТАПЫ ОЧИСТКИ САЙТА</h2>
+        <ul style="color: #fff; font-size: 18px; line-height: 1.8;">
+<li>❌ <strong>0 – 24 кликов:</strong> сайт топ уровня .</li>
+            <li>🔒 <strong>25 кликов:</strong> Уровень 1 — Выпилим мигающие кислотные цвета, поставим нормальный фон.</li>
+            <li>🔒 <strong>100 кликов:</strong> Уровень 2 — Уберем уродские шрифты Comic Sans, сделаем нормальную сетку.</li>
+            <li>🔒 <strong>500 кликов:</strong> Уровень 3 — Полная превращение в стильный современный тёмный портал.</li>
+        </ul>
+    </div>
 </div>
 
 <script>
-    const statuses = [
-        "АРОМАТ: Заводская тухлая яичница",
-        "АРОМАТ: Палёная бурмалда и резина",
-        "АРОМАТ: Чистый голый алгоголик",
-        "АРОМАТ: Металлическая кислота "
-    ];
-
-    const winds = [
-        "С НПЗ прямо тебе в форточку",
-        "Со стороны Завода масел ",
-        "Штиль! Вонь просто висит над твоим домом",
-        "С факела "
-    ];
-
-    function sniffAir() {
-        // Генерируем дикий рандом
-        const randomPpm = Math.floor(Math.random() * 8000) + 2000;
-        document.getElementById('ppm').innerText = randomPpm + " PPM";
-        
-        const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-        document.getElementById('status-text').innerText = "СТАТУС: " + randomStatus;
-
-        const randomWind = winds[Math.floor(Math.random() * winds.length)];
-        document.getElementById('wind').innerText = randomWind;
-
-        alert("Ты сделал глубокий вдох! -5 лет жизни. Спасибо за запуск!");
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
     }
+
+    // Логика кликера (хранение в localStorage)
+    let globalClicks = parseInt(localStorage.getItem('nkb_clicks') || '3'); // старт с 3
+    const hasClicked = localStorage.getItem('nkb_user_clicked');
+
+    function updateUI() {
+        document.getElementById('click-stats').innerText = "Зафиксировано кликов: " + globalClicks;
+        
+        // Считаем прогресс до 500 кликов
+        let pct = (globalClicks / 500) * 100;
+        if(pct > 100) pct = 100;
+        document.getElementById('p-fill').style.width = pct + '%';
+
+        // Статусы уровней
+        const lvlText = document.getElementById('level-status');
+        if(globalClicks < 25) {
+            lvlText.innerText = "ТЕКУЩИЙ СТАТУС: Уровень 0 (Кислотный треш)";
+        } else if(globalClicks < 100) {
+            lvlText.innerText = "ТЕКУЩИЙ СТАТУС: Уровень 1 (Немного получше)";
+        } else if(globalClicks < 500) {
+            lvlText.innerText = "ТЕКУЩИЙ СТАТУС: Уровень 2 (Адекватный сайт)";
+        } else {
+            lvlText.innerText = "ТЕКУЩИЙ СТАТУС: Уровень 3 (Премиум Портал)";
+        }
+
+        if(hasClicked) {
+            const btn = document.getElementById('click-btn');
+            btn.disabled = true;
+            btn.innerText = "Ты уже внёс свой клик! Жди остальных.";
+        }
+    }
+
+    function registerClick() {
+        if(!localStorage.getItem('nkb_user_clicked')) {
+            globalClicks += 1;
+            localStorage.setItem('nkb_clicks', globalClicks);
+            localStorage.setItem('nkb_user_clicked', 'true');
+            updateUI();
+            alert("Твой клик засчитан! +1 к очистке воздуха и дизайна.");
+        }
+    }
+
+    const smells = [
+        { title: "Бурмалда Заводская", desc: "Факел НПЗ работает на полную. Запах палёной резины и сероводорода." },
+        { title: "Феноловый Замес", desc: "Сдувает со стороны Завода масел. Пахнет аптекой и горелым пластиком." },
+        { title: "Аммиачный Водопад", desc: "Резкая вонь. Слёзы из глаз гарантированы." }
+    ];
+
+    function generateSmell() {
+        const res = document.getElementById('burmalda-result');
+        const random = smells[Math.floor(Math.random() * smells.length)];
+        document.getElementById('b-title').innerText = random.title;
+        document.getElementById('b-desc').innerText = random.desc;
+        res.style.display = 'block';
+    }
+
+    // Инициализация
+    updateUI();
 </script>
 
 </body>
